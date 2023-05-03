@@ -15,21 +15,12 @@ class TypeSeeder extends Seeder
     public function run()
     {
         $name = [
-            'Standard Room',
-            'Superior Room',
-            'Deluxe Room',
-            'Junior Suite Room',
-            'Suite Room',
-            'Presidential Suite',
-            'Single Room',
-            'Twin Room',
-            'Double Room',
-            'Family Room/Triple Room',
-            'Connecting Room',
-            'Murphy Room',
-            'Accessible Room/Disabled Room',
-            'Smoking/Non Smoking Room',
-            'Cabana Room',
+            'Single Bedroom',
+            'Double Bedroom',
+            'Family Bedroom',
+            'Function Hall',
+
+            
         ];
 
         $information = [

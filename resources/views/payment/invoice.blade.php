@@ -15,7 +15,7 @@
         }
 
         .add td {
-            color: #c5c4c4;
+            color: black;
             text-transform: uppercase;
             font-size: 12px
         }
@@ -28,13 +28,19 @@
 @endsection
 @section('content')
 
-    <div class="container mt-5 mb-3">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="d-flex flex-row p-2"> <img src="{{ asset('img/logo/sip.png') }}" width="48">
-                        <div class="d-flex flex-column"> <span class="font-weight-bold">Invoice</span>
-                            <small>INV-{{ $payment->id }}</small>
+<div class="container mt-5 mb-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+        <button id="print-button" onclick="printResult()">Print Receipt</button>
+
+            <div class="card" id="content" >
+
+            <div class="text-center">
+  </div>
+
+                    <div class="d-flex flex-row p-2"> <img src="{{ asset('img/logo/logo.png') }}" width="48">
+                        <div class="d-flex flex-column"> <span class="font-weight-bold"  >E-Receipt</span>
+                            <small>Payment Id: {{ $payment->id }}</small>
                         </div>
                     </div>
                     <hr>
@@ -68,9 +74,9 @@
                                     <td class="text-center">{{ $payment->transaction->getDateDifferenceWithPlural() }}
                                     </td>
                                     <td class="text-center">
-                                        {{ Helper::convertToRupiah($payment->transaction->room->price) }}</td>
+                                        {{ $payment->transaction->room->price }}</td>
                                     <td class="text-center">
-                                        {{ Helper::convertToRupiah($payment->transaction->getTotalPrice()) }}</td>
+                                        {{ $payment->transaction->getTotalPrice() }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -89,10 +95,10 @@
                                 <tr class="content">
                                     <td></td>
                                     <td class="text-center">
-                                        {{ Helper::convertToRupiah($payment->transaction->getMinimumDownPayment()) }}</td>
-                                    <td class="text-center">{{ Helper::convertToRupiah($payment->price) }}</td>
+                                        {{ $payment->transaction->getMinimumDownPayment() }}</td>
+                                    <td class="text-center">{{ $payment->price }}</td>
                                     <td class="text-center">
-                                        {{ $payment->transaction->getTotalPrice() - $payment->transaction->getTotalPayment() <= 0 ? '-' : Helper::convertToRupiah($payment->transaction->getTotalPrice($payment->transaction->room->price, $payment->transaction->check_in, $payment->transaction->check_out) - $payment->transaction->getTotalPayment()) }}
+                                        {{ $payment->transaction->getTotalPrice() - $payment->transaction->getTotalPayment() <= 0 ? '-' : $payment->transaction->getTotalPrice($payment->transaction->room->price, $payment->transaction->check_in, $payment->transaction->check_out) - $payment->transaction->getTotalPayment() }}
                                     </td>
                                 </tr>
                             </tbody>
@@ -120,6 +126,20 @@
                 </div>
             </div>
         </div>
+        <script>
+ function printResult() {
+    var DocumentContainer = document.getElementById('content');
+    var WindowObject = window.open('', "PrintWindow", "width=750,height=650,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes");
+    WindowObject.document.writeln(DocumentContainer.innerHTML);
+    WindowObject.document.close();
+    WindowObject.focus();
+    WindowObject.print();
+    WindowObject.close();
+}
+</script>
     </div>
+    
+
+    
 
 @endsection

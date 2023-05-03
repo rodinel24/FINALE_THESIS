@@ -1,6 +1,8 @@
 @extends('template.master')
 @section('title', 'Reservation')
 @section('content')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <div class="row mt-2 mb-2">
         <div class="col-lg-6 mb-2">
             <div class="d-grid gap-2 d-md-block">
@@ -27,7 +29,7 @@
     </div>
     <div class="row my-2 mt-4 ms-1">
         <div class="col-lg-12">
-            <h5>Active Guests: </h5>
+            <h5>Reservations: </h5>
         </div>
     </div>
     <div class="row">
@@ -35,19 +37,24 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-sm table-hover">
+                        <table class="table table-sm table-hover" id="myTable">
+
                             <thead>
+                    <button id="exportBtn">Export to Excel</button>
+
                                 <tr>
                                     <th>#</th>
                                     <th>ID</th>
-                                    <th>Customer</th>
-                                    <th>Room</th>
+                                    <th>Guest Name</th>
+                                    <th>Email</th>
+                                    <th>Room Number</th>
+                                    <th>Room Type</th>
                                     <th>Check In</th>
                                     <th>Check Out</th>
                                     <th>Days</th>
                                     <th>Total Price</th>
-                                    <th>Paid Off</th>
-                                    <th>Debt</th>
+                                    <th>Paid</th>
+                                    <th>Balance</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -58,17 +65,19 @@
                                         </th>
                                         <td>{{ $transaction->id }}</td>
                                         <td>{{ $transaction->customer->name }}</td>
+                                        <td>{{ $transaction->customer->user->email }}</td>
                                         <td>{{ $transaction->room->number }}</td>
+                                        <td>{{ $transaction->room->type->name }}</td>
                                         <td>{{ Helper::dateFormat($transaction->check_in) }}</td>
                                         <td>{{ Helper::dateFormat($transaction->check_out) }}</td>
                                         <td>{{ $transaction->getDateDifferenceWithPlural($transaction->check_in, $transaction->check_out) }}
                                         </td>
-                                        <td>{{ Helper::convertToRupiah($transaction->getTotalPrice()) }}
+                                        <td>{{ ($transaction->getTotalPrice()) }}
                                         </td>
                                         <td>
-                                            {{ Helper::convertToRupiah($transaction->getTotalPayment()) }}
+                                            {{ ($transaction->getTotalPayment()) }}
                                         </td>
-                                        <td>{{ $transaction->getTotalPrice() - $transaction->getTotalPayment() <= 0 ? '-' : Helper::convertToRupiah($transaction->getTotalPrice() - $transaction->getTotalPayment()) }}
+                                        <td>{{ $transaction->getTotalPrice() - $transaction->getTotalPayment() <= 0 ? '-' : ($transaction->getTotalPrice() - $transaction->getTotalPayment()) }}
                                         </td>
                                         <td>
                                             <a class="btn btn-light btn-sm rounded shadow-sm border p-1 m-0 {{$transaction->getTotalPrice() - $transaction->getTotalPayment() <= 0 ? 'disabled' : ''}}"
@@ -93,17 +102,17 @@
             </div>
         </div>
     </div>
-    <div class="row my-2 mt-4 ms-1">
+    <!-- <div class="row my-2 mt-4 ms-1" >
         <div class="col-lg-12">
-            <h5>Expired: </h5>
+            <h5>Check-out Guests: </h5>
         </div>
     </div>
-    <div class="row">
+    <div class="row" >
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body" id="checkout">
                     <div class="table-responsive">
-                        <table class="table table-sm table-hover">
+                        <table class="table table-sm table-hover" >
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -131,12 +140,12 @@
                                     <td>{{ Helper::dateFormat($transaction->check_out) }}</td>
                                     <td>{{ $transaction->getDateDifferenceWithPlural($transaction->check_in, $transaction->check_out) }}
                                     </td>
-                                    <td>{{ Helper::convertToRupiah($transaction->getTotalPrice()) }}
+                                    <td>{{ ($transaction->getTotalPrice()) }}
                                     </td>
                                     <td>
-                                        {{ Helper::convertToRupiah($transaction->getTotalPayment()) }}
+                                        {{ ($transaction->getTotalPayment()) }}
                                     </td>
-                                    <td>{{ $transaction->getTotalPrice() - $transaction->getTotalPayment() <= 0 ? '-' : Helper::convertToRupiah($transaction->getTotalPrice($transaction->room->price, $transaction->check_in, $transaction->check_out) - $transaction->getTotalPayment()) }}
+                                    <td>{{ $transaction->getTotalPrice() - $transaction->getTotalPayment() <= 0 ? '-' : ($transaction->getTotalPrice($transaction->room->price, $transaction->check_in, $transaction->check_out) - $transaction->getTotalPayment()) }}
                                     </td>
                                     <td>
                                         <a class="btn btn-light btn-sm rounded shadow-sm border p-1 m-0 {{$transaction->getTotalPrice($transaction->room->price, $transaction->check_in, $transaction->check_out) - $transaction->getTotalPayment() <= 0 ? 'disabled' : ''}}"
@@ -157,12 +166,55 @@
                         </table>
                         {{ $transactions->onEachSide(2)->links('template.paginationlinks') }}
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
-    </div>
+    </div>-->
+
+    <style>
+        #printBtn {
+   background-color: #4CAF50;
+   border: none;
+   color: white;
+   padding: 10px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+   cursor: pointer;
+}
+
+    </style>
+
+    <button id="printBtn">Print</button>
+   
 
 
+   <script>
+    document.getElementById("printBtn").addEventListener("click", function(){
+    var printContents = document.getElementById("checkout").innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+});
+
+
+
+$('#exportBtn').on('click', function() {
+                 // Get HTML table data
+        var table = document.getElementById("myTable");
+        var wb = XLSX.utils.table_to_book(table);
+
+        // Save data to Excel file
+        XLSX.writeFile(wb, "Transaction_table.xlsx");
+            });
+
+   </script>
 
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"

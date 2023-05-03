@@ -17,7 +17,10 @@ use App\Http\Controllers\TransactionRoomReservationController;
 use App\Http\Controllers\RoomStatusController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TypeController;
+use App\Http\Controllers\HotelWebsiteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OnlineReservationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,8 +33,32 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('website/home');
+});
 
 
+Route::get('/about' , [HotelWebsiteController::class , 'about'])->name('about');
+Route::get('/blog' , [HotelWebsiteController::class , 'blog'])->name('blog');
+Route::get('/contact' , [HotelWebsiteController::class , 'contact'])->name('contact');
+Route::get('/gallery' , [HotelWebsiteController::class , 'gallery'])->name('gallery');
+Route::get('/ourRoom' , [HotelWebsiteController::class , 'ourRoom'])->name('ourRoom');
+
+//contact us routes
+Route::post('/contact' , [ContactController::class , 'store'])->name('contact.store');
+
+
+
+
+Route::name('reservationOnline.reservation.')->group(function () {
+    Route::get('/createIdentityOnline', [OnlineReservationController::class, 'createIdentity'])->name('createIdentity');
+    Route::get('/pickFromCustomerOnline', [OnlineReservationController::class, 'pickFromCustomer'])->name('pickFromCustomer');
+    Route::post('/storeCustomerOnline', [OnlineReservationController::class, 'storeCustomer'])->name('storeCustomer');
+    Route::get('/{customer}/viewCountPersonOnline', [OnlineReservationController::class, 'viewCountPerson'])->name('viewCountPerson');
+    Route::get('/{customer}/chooseRoomOnline', [OnlineReservationController::class, 'chooseRoom'])->name('chooseRoom');
+    Route::get('/{customer}/{room}/{from}/{to}/confirmationOnline', [OnlineReservationController::class, 'confirmation'])->name('confirmation');
+    Route::post('/{customer}/{room}/payDownPaymentOnline', [OnlineReservationController::class, 'payDownPayment'])->name('payDownPayment');
+});
 
 
 Route::group(['middleware' => ['auth', 'checkRole:Super']], function () {
@@ -88,7 +115,7 @@ Route::group(['middleware' => ['auth', 'checkRole:Super,Admin,Customer']], funct
 Route::view('/login', 'auth.login')->name('login');
 Route::post('/postLogin', [AuthController::class, 'postLogin'])->name('postlogin');
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/sendEvent', function () {
     $superAdmins = User::where('role', 'Super')->get();
