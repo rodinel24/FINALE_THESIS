@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Transaction;
 use App\Models\Payment;
 use Carbon\Carbon;
+use App\Http\Controllers\DB;
 
 class DashboardController extends Controller
 {
@@ -28,6 +29,10 @@ class DashboardController extends Controller
         // $todays_revenue = $orders->sum('total');
 
         //download function for todays guests
+
+
+        
+   
 
         
         

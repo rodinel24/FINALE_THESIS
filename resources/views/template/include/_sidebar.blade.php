@@ -31,7 +31,21 @@
                     <a class="nav-link py-3 border-bottom border-right myBtn  dropdown-toggle dropend
                     {{ in_array(Route::currentRouteName(), ['room.index', 'room.show', 'room.create', 'room.edit', 'type.index', 'type.create', 'type.edit', 'roomstatus.index', 'roomstatus.create', 'roomstatus.edit']) ? 'active' : '' }}
                         "
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-expanded="false" title="Facilities">
+                        <i class="fas fa-house-user"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('room.index') }}">Room</a></li>
+                        <li><a class="dropdown-item" href="{{ route('type.index') }}">Type</a></li>
+                        <li><a class="dropdown-item" href="{{ route('roomstatus.index') }}">Status</a></li>
+                        <li><a class="dropdown-item" href="{{ route('facility.index') }}">Facility</a></li>
+                    </ul>
+                </li>
+                <li class="mb-2 bg-white rounded cursor-pointer">
+                    <a class="nav-link py-3 border-bottom border-right myBtn  dropdown-toggle dropend
+                    {{ in_array(Route::currentRouteName(), ['room.index', 'room.show', 'room.create', 'room.edit', 'type.index', 'type.create', 'type.edit', 'roomstatus.index', 'roomstatus.create', 'roomstatus.edit']) ? 'active' : '' }}
+                        "
+                        data-bs-toggle="dropdown" aria-expanded="false" title="Reports">
                         <i class="fas fa-house-user"></i>
                     </a>
                     <ul class="dropdown-menu">

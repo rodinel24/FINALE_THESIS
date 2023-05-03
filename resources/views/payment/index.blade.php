@@ -1,11 +1,19 @@
 @extends('template.master')
 @section('title', 'Payment')
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     <div class="card shadow-sm border">
+
         <div class="card-body">
-            <table class="table table-hover">
+
+            <table class="table table-hover" id="myTable">
+                <i class="fas fa-download" id="exportBtn" style="float:right;"></i>
+
                 <thead>
+
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Room</th>
@@ -34,6 +42,19 @@
                         </tr>
                     @endforelse
                 </tbody>
+                <script>
+    
+$('#exportBtn').on('click', function() {
+                 // Get HTML table data
+        var table = document.getElementById("myTable");
+        var wb = XLSX.utils.table_to_book(table);
+
+        // Save data to Excel file
+        XLSX.writeFile(wb, "Payment_table.xlsx");
+            });
+
+
+</script>
             </table>
         </div>
     </div>

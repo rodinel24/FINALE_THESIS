@@ -62,17 +62,17 @@
                                         <div>
                                       
 
-                                                <i class="fas fa-download"></i>
+                                                <i class="fas fa-download" id="exportBtn" style="float:right;"></i>
                                             </a>
                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button id="exportBtn">Export to EXCEL</button>
-                            <div class="card-body table-responsive p-0" id="dataTable">
-                                <table class="table table-hover table-striped" >
+                            <div class="card-body table-responsive p-0" >
+                                <table class="table table-hover table-striped" id="dataTable">
                                     <thead>
+                                    <!-- <button id="exportBtn">Export to Excel</button> -->
                                         <tr>
                                             <th></th>
                                             <th>Name</th>
@@ -186,6 +186,16 @@
                                     </span>
                                 </div>
                             </div>
+                            <script>
+        $('#exportBtn').on('click', function() {
+                            // Get HTML table data
+                    var table = document.getElementById("dataTable");
+                    var wb = XLSX.utils.table_to_book(table);
+                    // Save data to Excel file
+
+                    XLSX.writeFile(wb, "Guests_Today.xlsx");
+                        });
+    </script>
                         </div>
                     </div>
                 </div>
@@ -197,16 +207,7 @@
     <script src="{{ asset('style/js/chart.min.js') }}"></script>
     <script src="{{ asset('style/js/guestsChart.js') }}"></script>
 
-    <script>
-        $('#exportBtn').on('click', function() {
-                            // Get HTML table data
-                    var table = document.getElementById("dataTable");
-                    var wb = XLSX.utils.table_to_book(table);
-
-                    // Save data to Excel file
-                    XLSX.writeFile(wb, "Guests_Today.xlsx");
-                        });
-    </script>
+    
     <script>
          
 

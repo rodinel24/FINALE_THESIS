@@ -45,8 +45,8 @@
                             <select id="role" name="role" class="form-select @error('password') is-invalid @enderror">
                                 <option selected disabled hidden>Choose...</option>
                                 @if (in_array($user->role, ['Super', 'Admin']))
-                                    <option value="Super" @if ($user->role == 'Super') selected @endif>Super</option>
-                                    <option value="Admin" @if ($user->role == 'Admin') selected @endif>Admin</option>
+                                    <option value="Super" @if ($user->role == 'Super') selected @endif>System Administrator</option>
+                                    <option value="Admin" @if ($user->role == 'Admin') selected @endif>Hotel Administator</option>
                                 @endif
                                 @if ($user->role == 'Customer')
                                     <option value="Customer" @if ($user->role == 'Customer') selected @endif>Customer</option>

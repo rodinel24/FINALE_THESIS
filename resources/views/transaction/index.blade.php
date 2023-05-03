@@ -38,9 +38,10 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-sm table-hover" id="myTable">
+                        <i class="fas fa-download" id="exportBtn" style="float:right;"></i>
 
                             <thead>
-                    <button id="exportBtn">Export to Excel</button>
+
 
                                 <tr>
                                     <th>#</th>
@@ -56,6 +57,7 @@
                                     <th>Paid</th>
                                     <th>Balance</th>
                                     <th>Action</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -171,37 +173,12 @@
         </div>
     </div>-->
 
-    <style>
-        #printBtn {
-   background-color: #4CAF50;
-   border: none;
-   color: white;
-   padding: 10px 20px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
-   margin: 4px 2px;
-   cursor: pointer;
-}
 
-    </style>
-
-    <button id="printBtn">Print</button>
    
 
 
    <script>
-    document.getElementById("printBtn").addEventListener("click", function(){
-    var printContents = document.getElementById("checkout").innerHTML;
-    var originalContents = document.body.innerHTML;
-
-    document.body.innerHTML = printContents;
-
-    window.print();
-
-    document.body.innerHTML = originalContents;
-});
+   
 
 
 
