@@ -101,7 +101,7 @@ class OnlineReservationController extends Controller
 
         event(new RefreshDashboardEvent("Someone reserved a room"));
 
-        return redirect()->route('reservationOnline.reservation.index')->with('success', 'Room ' . $room->number . ' has reserved by ' . $customer->name);
+        return redirect()->route('transaction.reservation.index')->with('success', 'Room ' . $room->number . ' has reserved by ' . $customer->name);
     }
 
     private function getOccupiedRoomID($stayFrom, $stayUntil)

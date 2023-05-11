@@ -31,13 +31,31 @@ class DashboardController extends Controller
         //download function for todays guests
 
 
+
+
+        //this month revenue
+                
+        // Get the current month and year
+        $currentMonth = Carbon::now()->format('m');
+        $currentYear = Carbon::now()->format('Y');
+
+        // Query the transactions table to get the revenue for the current month and year
+        $revenue = Payment::whereMonth('created_at', $currentMonth)
+            ->whereYear('created_at', $currentYear)
+            ->sum('price');
+
+        // Format the revenue as currency
+        $formattedRevenue =  number_format($revenue, 2);
+
+
+
         
    
 
         
         
 
-        return view('dashboard.index', compact('transactions','revenue','todays_revenue'));
+        return view('dashboard.index', compact('transactions','revenue','todays_revenue' , 'formattedRevenue'));
     }
 
     

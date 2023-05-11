@@ -112,12 +112,21 @@
                     
                      <p class="margin_0">
 The Dr. Magadapa Ali Ringia Hotel was named after the late superintendent of the Mindanao State University—Maigo School of Arts and Trades, Sultan Gaos Magadapa Ali Ringia, because of the legacy of the late superintendent of the campus. The original name of the hotel was Sultan Gaos Magadapa Ali Ringia Memorial Building, but it was changed into Dr. Magadapa Ali Ringia Hotel, and the hotel is commonly known as MSU-MSAT Hotel. </p>
-                     <a class="read_more" href="Javascript:void(0)"> Read More</a>
+
+<p>Mission <br> 1. Lead in social tranformation through peace education and integration of the muslims and other cultural minority groups into the mainstream society:
+
+<br> 2. Ensure excellence in instruction, research development, enovation, extension, and environmental education and discovery:
+
+<br> 3. Advance national and international linkages through collaborations: and
+
+<br>4. Demonstrate greater excellence, relevance and inclusiveness for Mindanao and the Filipino Nation.</p>
+<p>Vision <br> MSU System aspires to be a center of excellence in instruction, research and extension transforming itself into a premiere and globally competitive national peace university.</p>
+<a class="read_more" href="Javascript:void(0)"> Read More</a>
                   </div>
                </div>
                <div class="col-md-7">
                   <div class="about_img">
-                     <figure ><img style="border-radius:10px;" src="images/hotelmsat.jpg" alt="#"/></figure>
+                     <figure ><img style="border-radius:20px;" src="images/hotelmsat.jpg" alt="#"/></figure>
                   </div>
                </div>
             </div>
@@ -125,8 +134,8 @@ The Dr. Magadapa Ali Ringia Hotel was named after the late superintendent of the
       </div>
       <!-- end about -->
      
- <!--  footer -->
- <footer>
+  <!--  footer -->
+  <footer>
          <div class="footer">
             <div class="container">
                <div class="row" id="foot">
@@ -134,11 +143,10 @@ The Dr. Magadapa Ali Ringia Hotel was named after the late superintendent of the
                      <h3>Contact US</h3>
                      <ul class="conta">
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i>Maigo, Lanao del Norte</li>
-                        <li><i class="fa fa-mobile" aria-hidden="true"></i>Contact Number</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">Businesshotel@gmail.com</a></li>
-                     </ul>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i>227-4208</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">drringiahotel.03@gmail.com</a></li>
+                      </ul>
                   </div>
-                 
                   <div class="col-md-5" >
                      
                      <ul class="social_icon">
@@ -146,11 +154,8 @@ The Dr. Magadapa Ali Ringia Hotel was named after the late superintendent of the
                         <li> <a href="https://twitter.com/Dr_Ringia_Hotel" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                      </ul>
                   </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
+                   <div class="row">
+                     
                      <div class="col-md-10 offset-md-1">
                         
                         <p>
@@ -158,7 +163,12 @@ The Dr. Magadapa Ali Ringia Hotel was named after the late superintendent of the
                        
 
                      </div>
-                  </div>
+                     </div>
+                 
+                
+               </div>
+            </div>
+            
                </div>
             </div>
          </div>

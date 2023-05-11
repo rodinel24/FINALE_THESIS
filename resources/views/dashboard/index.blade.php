@@ -4,7 +4,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 
-
+<span><a href="#" style="font-size: 1.2em;">Dashboard</a></span>
 
     <div id="dashboard">
         <div class="row">
@@ -17,6 +17,7 @@
                             </div>
                         </div>
                     </div>
+                  
                     <div class="col-lg-6">
                         <div class="card shadow-sm border" style="background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%); margin-bottom:10px;">
                             <div class="card-body">
@@ -43,7 +44,7 @@
                     <div class="col-lg-6">
                         <div class="card shadow-sm border" style="background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%); margin-bottom:10px;">
                             <div class="card-body">
-                            <h5>Todays Revenue: &#8369;{{ number_format($todays_revenue, 2) }}</h5>
+                            <h5>Monthly Revenue: &#8369;{{ $formattedRevenue }}</h5>
 
                             </div>
                         </div>
@@ -209,7 +210,7 @@
 
     
     <script>
-         
+          
 
         function reloadJs(src) {
             src = $('script[src$="' + src + '"]').attr("src");

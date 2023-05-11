@@ -12,6 +12,8 @@
     </style>
 @endsection
 @section('content')
+<span><a href="#" style="font-size: 1.2em;">Services/<span><a href="#" style="font-size: 1.2em;">Room Type </a></span> </a></span>
+
     <div class="row">
         <div class="col-lg-12">
             <div class="row mt-2 mb-2">

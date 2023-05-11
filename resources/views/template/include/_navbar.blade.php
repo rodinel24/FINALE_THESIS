@@ -4,6 +4,16 @@
             style="width: 2rem; height: 2rem;">
             <i class="fa fa-bars"></i>
         </div>
+        <div style="width: 60px; margin-left: 30px;">
+            <img src="img/logo/logo.png" alt="" style="width: 100%; height: auto;">
+            
+        </div>
+        <div class="details text-start">
+    <h3>Dr. Magadapa Ali Ringia Hotel</h3>
+    </div>
+   
+    
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,13 +23,14 @@
                 <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="btn position-relative bg-icon">
                         <i class="fas fa-bell">
-                            @if (auth()->user()->unreadNotifications->count() > 0)
+                            <!-- @if (auth()->user()->unreadNotifications->count() > 0) -->
                                 <span
                                     class="position-absolute mt-1 top-0 start-100 translate-middle badge rounded-pill bg-secondary">
                                     {{ auth()->user()->unreadNotifications->count() }}
                                     <span class="visually-hidden">unread messages</span>
                                 </span>
-                            @endif
+                            <!-- @endif -->
+                           
                         </i>
                     </div>
                 </div>
@@ -81,10 +92,10 @@
                 </div>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item"
-                            href="{{ route('user.show', ['user' => auth()->user()->id]) }}">Profil</a>
+                            href="{{ route('user.show', ['user' => auth()->user()->id]) }}">Profile</a>
                     </li>
-                    <li><a class="dropdown-item" href="#">Activity</a></li>
-                    <li><a class="dropdown-item" href="#">Setting</a></li>
+                    <!-- <li><a class="dropdown-item" href="#">Activity</a></li>
+                    <li><a class="dropdown-item" href="#">Setting</a></li> -->
                     <li>
                         <hr class="dropdown-divider">
                     </li>

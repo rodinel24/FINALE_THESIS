@@ -38,8 +38,9 @@
                         </div>
                         <div class="row">
                         <div class="logo" style="padding: 5px; border-radius: 10px; text-align:center;">
-                        <img src="img/logo/logo.png" alt="#" style="height: 9.5em; width: auto; border-radius: 10px; margin-top: -32px;">
-                        </div>
+                        <a href="{{ url('/') }}"> <img href="{{url('/login')}}"src="img/logo/logo.png" alt="#" style="height: 9.5em; width: auto; border-radius: 10px; margin-top: -32px;"></a>
+                    </div>
+                        
 
                             <div class="col-lg-12">
                                 <h5 class="card-title text-center">Property Management System</h5>
@@ -51,25 +52,17 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-label-group">
-                                        <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                                        <input type="email" id="email" name="email" class="form-control"
                                             placeholder="Email" value="{{ old('email') }}" required autofocus>
                                         <label for="email">Email</label>
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                        <span class="error-message email-error-message"></span>
                                     </div>
                                     <div class="form-label-group">
                                         <input type="password" id="password" name="password" autocomplete="new-password"
-                                            class="form-control @error('password') is-invalid @enderror" placeholder="Password" value="{{ old('password') }}"
+                                            class="form-control" placeholder="Password" value="{{ old('password') }}"
                                             required>
                                         <label for="password">Password</label>
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                        <span class="error-message password-error-message"></span>
                                     </div>
                                 </div>
                             </div>

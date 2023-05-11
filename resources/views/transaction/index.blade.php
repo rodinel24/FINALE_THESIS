@@ -3,6 +3,9 @@
 @section('content')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+<span><a href="#" style="font-size: 1.2em;">Transaction</a></span>
+
     <div class="row mt-2 mb-2">
         <div class="col-lg-6 mb-2">
             <div class="d-grid gap-2 d-md-block">

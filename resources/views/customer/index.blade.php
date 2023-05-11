@@ -1,6 +1,7 @@
 @extends('template.master')
 @section('title', 'Customer')
 @section('content')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         .mybg {
             background-image: linear-gradient(#1975d1, #1975d1);
@@ -24,6 +25,7 @@
         }
 
     </style>
+<span><a href="#" style="font-size: 1.2em;">Accounts/<span><a href="#" style="font-size: 1.2em;">Customer </a></span> </a></span>
 
     <div class="row">
         <div class="col-lg-12">
@@ -150,16 +152,11 @@
             </div>
             <div class="row justify-content-md-center mt-3">
                 <div class="col-sm-10 d-flex justify-content-md-center">
-                    {{ $customers->onEachSide(2)->links('template.paginationlinks') }}
+                    {{ $customers->onEachSide(1)->links('template.paginationlinks') }}
                 </div>
             </div>
         </div>
-    </div>
-
-@endsection
-
-@section('footer')
-<script>
+        <script>
     $('.delete').click(function() {
         var customer_id = $(this).attr('customer-id');
         var customer_name = $(this).attr('customer-name');
@@ -190,4 +187,10 @@
     });
 
 </script>
+    </div>
+
+@endsection
+
+@section('footer')
+
 @endsection

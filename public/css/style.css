@@ -320,8 +320,11 @@ button {
      background-color: transparent;
 }
 
+#click{
+     color: white;
+}
 #nav{
-     background-color: #0F1521;
+     /* background-color: #0F1521;
     border: none;
     color: white;
     padding: 10px 10px;
@@ -335,12 +338,20 @@ button {
     transition: background-color 0.3s ease;
     margin-left: 10px;
     width: 120px;
-    height: 40px;
+    height: 40px; */
+     background-color: #000000c7;
+     color: white;
+     padding: 20px 20px;
+     margin: 5px;
+     border-radius: 20px;
+     transform: translateY(-20%);
+
+
     
 }
 #nav:hover{
-     background-color: white;
-color: #0F1521;;
+     background-color: #000000c7;
+          color: white;;
 }
 
 /* bullet form for rooms and function hall */
@@ -787,19 +798,26 @@ video {
 .about_img {
      margin-right: 40px;
      overflow: hidden;
+     border-radius: 20px;
+
 }
 
 .about_img figure {
      margin: 0;
+     border-radius: 20px;
+
 }
 
 .about_img figure img {
      width: 100%;
      transition: all .5s;
+     border-radius: 20px;
+
 }
 
 .about_img figure img:hover {
      transform: scale(1.2);
+     border-radius: 20px;
 }
 /** end about section **/
 

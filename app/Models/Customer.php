@@ -18,6 +18,7 @@ class Customer extends Model
         'user_id',
         'gender'
     ];
+    
 
     public function user()
     {

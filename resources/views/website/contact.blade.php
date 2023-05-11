@@ -139,8 +139,8 @@
          </div>
       </div>
       <!-- end contact -->
-       <!--  footer -->
-       <footer>
+      <!--  footer -->
+      <footer>
          <div class="footer">
             <div class="container">
                <div class="row" id="foot">
@@ -148,11 +148,10 @@
                      <h3>Contact US</h3>
                      <ul class="conta">
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i>Maigo, Lanao del Norte</li>
-                        <li><i class="fa fa-mobile" aria-hidden="true"></i>Contact Number</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">Businesshotel@gmail.com</a></li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i>227-4208</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">drringiahotel.03@gmail.com</a></li>
                      </ul>
                   </div>
-                 
                   <div class="col-md-5" >
                      
                      <ul class="social_icon">
@@ -160,11 +159,8 @@
                         <li> <a href="https://twitter.com/Dr_Ringia_Hotel" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                      </ul>
                   </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
+                   <div class="row">
+                     
                      <div class="col-md-10 offset-md-1">
                         
                         <p>
@@ -172,7 +168,12 @@
                        
 
                      </div>
-                  </div>
+                     </div>
+                 
+                
+               </div>
+            </div>
+            
                </div>
             </div>
          </div>

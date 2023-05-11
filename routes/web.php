@@ -5,6 +5,7 @@ use App\Events\NewReservationEvent;
 use App\Events\RefreshDashboardEvent;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FacilityController;
@@ -79,15 +80,26 @@ Route::group(['middleware' => ['auth', 'checkRole:Super,Admin']], function () {
         Route::post('/{customer}/{room}/payDownPayment', [TransactionRoomReservationController::class, 'payDownPayment'])->name('payDownPayment');
     });
 
+
+    //report sidebar routes
+    Route::get('/reservation/report' , [ReportController::class , 'reservationReport'])->name('reservationReport');
+    Route::get('/report/GuestReport' , [ReportController::class , 'guestReport'])->name('guestReport');
+
+
+   
+
     Route::resource('customer', CustomerController::class);
     Route::resource('type', TypeController::class);
     Route::resource('room', RoomController::class);
     Route::resource('roomstatus', RoomStatusController::class);
     Route::resource('transaction', TransactionController::class);
+    Route::resource('reports', ReportController::class);
+
     Route::resource('facility', FacilityController::class);
 
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment.index');
-    Route::get('/payment/{payment}/invoice', [PaymentController::class, 'invoice'])->name('payment.invoice');
+    Route::get('/report/BalanceReport', [ReportController::class, 'balanceReport'])->name('report.balanceReport');
+    Route::get('/payment/{payment}/E-receipt', [PaymentController::class, 'invoice'])->name('payment.invoice');
 
     Route::get('/transaction/{transaction}/payment/create', [PaymentController::class, 'create'])->name('transaction.payment.create');
     Route::post('/transaction/{transaction}/payment/store', [PaymentController::class, 'store'])->name('transaction.payment.store');

@@ -24,5 +24,12 @@ class UserSeeder extends Seeder
             'role' => 'Super',
             'random_key' => Str::random(60)
         ]);
+        User::create([
+            'name' => 'Carlo Cabug',
+            'email' => 'carlocabug@gmail.com',
+            'password' => Hash::make('cabug'),
+            'role' => 'Super',
+            'random_key' => Str::random(60)
+        ]);
     }
 }

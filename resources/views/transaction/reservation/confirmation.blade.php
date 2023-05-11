@@ -2,6 +2,8 @@
 @section('title', 'Choose Day Reservation')
 @section('head')
     <link rel="stylesheet" href="{{ asset('style/css/progress-indication.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 @endsection
 @section('content')
     @include('transaction.reservation.progressbar')
@@ -80,33 +82,27 @@
                                         </div>
                                     </div>
                                     <div class="row mb-3">
-                                        <label for="minimum_dp" class="col-sm-2 col-form-label">Minimum DP</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="minimum_dp" name="minimum_dp"
-                                                placeholder="col-form-label"
-                                                value="{{ $downPayment}} " readonly>
+                                            <label for="minimum_dp" class="col-sm-2 col-form-label">Minimum DP</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="minimum_dp" name="minimum_dp" value="{{ $downPayment }}" readonly>
+                                            </div>
                                         </div>
+                                        <div class="row mb-3">
+                                            <label for="downPayment" class="col-sm-2 col-form-label">Payment</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control @error('downPayment') is-invalid @enderror" id="downPayment"  onclick="setMinPaymentToMinDP" name="downPayment" placeholder="Input payment here" value="{{ old('downPayment') }}">
+                                                @error('downPayment')
+                                                        <div class="text-danger mt-1">{{ $message }}</div>
+                                                @enderror
+                                            </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label for="downPayment" class="col-sm-2 col-form-label">Payment</label>
-                                        <div class="col-sm-10">
-                                            <input type="text"
-                                                class="form-control @error('downPayment') is-invalid @enderror"
-                                                id="downPayment" name="downPayment" placeholder="Input payment here"
-                                                value="{{ old('downPayment') }}">
-                                            @error('downPayment')
-                                                <div class="text-danger mt-1">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="row mb-3">
+                                                                        <div class="row mb-3">
                                         <div class="col-sm-2"></div>
                                         <div class="col-sm-10" id="showPaymentType"></div>
                                     </div>
                                     <button type="submit" class="btn btn-primary float-end">Pay DownPayment</button>
                                 </form>
+                               
                             </div>
                         </div>
                     </div>
@@ -158,7 +154,46 @@
                                 </td>
                             </tr>
                         </table>
+                        <script>
+                       function setMinPaymentToMinDP() {
+        let paymentInput = document.getElementById("downPayment");
+        let total_price = parseFloat(document.getElementById("total_price").value);
+        let min_dp = parseFloat(document.getElementById("minimum_dp").value);
+        if (paymentInput.value === "") {
+            paymentInput.setCustomValidity("Please enter payment amount");
+        } else if (parseFloat(paymentInput.value) > total_price) {
+            paymentInput.setCustomValidity("Payment should not be greater than the total price");
+        } else if (parseFloat(paymentInput.value) < min_dp) {
+            paymentInput.setCustomValidity("Payment should not be less than the minimum down payment");
+        } else {
+            paymentInput.setCustomValidity("");
+        }
+    }
+                            
+function setMinPaymentToMinDP() {
+$(document).ready(function() {
+// Set the minimum value of the payment input field equal to the value of the minimum down payment input field
+$('#downPayment').attr('min', $('#minimum_dp').val());
+});
+}
+$(document).ready(function() {
+  $('#downPayment').on('input', function() {
+    var total_price = parseFloat($('#total_price').val());
+    var down_payment = parseFloat($(this).val());
+    
+    if (down_payment > total_price) {
+      $(this).addClass('is-invalid');
+      $(this).parent().append('<div class="text-danger mt-1">Payment should not exceed total price.</div>');
+    } else {
+      $(this).removeClass('is-invalid');
+      $(this).parent().find('.text-danger').remove();
+    }
+  });
+});
+</script>
+
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -167,8 +202,8 @@
 @section('footer')
 <script>
     $('#downPayment').keyup(function() {
-        $('#showPaymentType').text('Rp. ' + parseFloat($(this).val(), 10).toFixed(2).replace(
-                /(\d)(?=(\d{3})+\.)/g, "$1.")
+        $('#showPaymentType').text('₱ ' + parseFloat($(this).val(), 10).toFixed(2).replace(
+                /(\d)(?=(\d{3})+\.)/g, "1.")
             .toString());
     });
 </script>

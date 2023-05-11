@@ -1,6 +1,7 @@
 @extends('template.invoicemaster')
 @section('title', 'Payment')
 @section('head')
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 
@@ -24,21 +25,48 @@
             font-size: 14px
         }
 
+        /* print and download buttons  */
+        button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+        }
+
+        #download-pdf {
+        background-color: #008CBA;
+        }
+
+        button:hover {
+        opacity: 0.8;
+        }
+
+
     </style>
 @endsection
 @section('content')
 
-<div class="container mt-5 mb-3">
+
+
+<div class="container mt-5 mb-3" >
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
-        <button id="print-button" onclick="printResult()">Print Receipt</button>
+      
 
-            <div class="card" id="content" >
+            <div class="card"   >
 
             <div class="text-center">
   </div>
-
-                    <div class="d-flex flex-row p-2"> <img src="{{ asset('img/logo/logo.png') }}" width="48">
+<div id="print">
+  
+                    <div  class="d-flex flex-row p-2"> <img src="{{ asset('img/logo/logo.png') }}" width="48" >
                         <div class="d-flex flex-column"> <span class="font-weight-bold"  >E-Receipt</span>
                             <small>Payment Id: {{ $payment->id }}</small>
                         </div>
@@ -122,14 +150,37 @@
                                 </tr>
                             </tbody>
                         </table>
+                
                     </div>
                 </div>
             </div>
+            <button id="print-button" onclick="printResult()" >Print Receipt</button>
+        
+        <button id="download-pdf" onclick="downloadPdf()"style="margin-left:443px" >Download PDF</button>
         </div>
+        </div>
+
         <script>
+            function downloadPdf() {
+    window.jsPDF = window.jspdf.jsPDF;
+
+    html2canvas(document.querySelector('#print')).then(function(canvas) {
+        var imgData = canvas.toDataURL('image/png');
+        var pdf = new jsPDF();
+        var imgWidth = 200;
+        var imgHeight = 250;
+        var marginLeft = 10; // adjust as necessary
+        var marginTop = 10; // adjust as necessary
+        var marginRight = 10; // adjust as necessary
+        var marginBottom = 10; // adjust as necessary
+        pdf.addImage(imgData, 'PNG', marginLeft, marginTop, imgWidth, imgHeight);
+        pdf.save('E-receipt.pdf');
+        console.log("is clicked");
+    });
+}
  function printResult() {
-    var DocumentContainer = document.getElementById('content');
-    var WindowObject = window.open('', "PrintWindow", "width=750,height=650,top=50,left=50,toolbars=no,scrollbars=yes,status=no,resizable=yes");
+    var DocumentContainer = document.getElementById('print');
+    var WindowObject = window.open('', "PrintWindow");
     WindowObject.document.writeln(DocumentContainer.innerHTML);
     WindowObject.document.close();
     WindowObject.focus();

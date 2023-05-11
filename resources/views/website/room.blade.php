@@ -102,12 +102,14 @@
             </div>
          </div>
       </div>
-     <!-- room -->
-     <div  class="blog">
+  <!-- room -->
+  <div  class="blog">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                 
+                  <div class="titlepage">
+                     <h2>Rooms</h2>
+                  </div>
                </div>
             </div>
             <div class="row">
@@ -147,20 +149,27 @@
                      </div>
                      <div class="blog_room">
                         <h3>Single Bedroom</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
-                         <!-- modal -->
+                        <span>Good for 1 person</span>
+                        <ul class="bullet-form">
+                           <li>Can add-on 1 extra single bed</li>
+                           <li>Fully Air-conditioned</li>
+                           <li>Mini fridge</li>
+                           <li>Closet with mirror</li>
+                           <li>Complete bathroom amenities</li>
+                           <li>Free Wifi</li>
+                         </ul>
+ <!-- modal -->
                               <!-- Button trigger modal -->
                               <button class="seeMore" id="open-modal1">See more photos</button>
 
                               <div id="modal1" class="modal">
                               <div class="modal-content">
                                  <button class="close" onclick="closeModals()">&times;</button>
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
+                                 <img src="../images/pixel_single.png" alt="Your image description here" />
+                                 <img src="../images/single_booking.png" alt="Your image description here" />
+                                 <img src="../images/singleroom1.jpg" alt="Your image description here" />
+                                 <img src="../images/singleroom2.jpg" alt="Your image description here" />
+                               
                                  
                               </div>
                               </div>
@@ -203,8 +212,15 @@
                      </div>
                      <div class="blog_room">
                         <h3>Double Bedroom</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
-
+                        <span>Good for 2 person</span>
+                        <ul class="bullet-form">
+                           <li>Can add-on 2 extra single bed</li>
+                           <li>Fully Air-conditioned</li>
+                           <li>Mini fridge</li>
+                           <li>Closet with mirror</li>
+                           <li>Complete bathroom amenities</li>
+                           <li>Free Wifi</li>
+                         </ul>
                          <!-- modal -->
                               <!-- Button trigger modal -->
                               <button class="seeMore" id="open-modal2">See more photos</button>
@@ -213,12 +229,10 @@
                               <div class="modal-content">
                               <button class="close" onclick="closeModals()">&times;</button>
 
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
+                                 <img src="images/double_booking.png" alt="Your image description here" />
+                                 <img src="images/doubleroom2.jpg" alt="Your image description here" />
+                                 <img src="images/doubleroom3.jpg" alt="Your image description here" />
+                               
                                  
                               </div>
                               </div>
@@ -261,8 +275,15 @@
                      </div>
                      <div class="blog_room">
                         <h3>Family Bedroom</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
-                              <!-- modal -->
+                        <span>Good for 4 person</span>
+                        <ul class="bullet-form">
+                           <li>Can add-on 4 extra single bed</li>
+                           <li>Fully Air-conditioned</li>
+                           <li>Mini fridge</li>
+                           <li>Closet with mirror</li>
+                           <li>Complete bathroom amenities</li>
+                           <li>Free Wifi</li>
+                         </ul>    <!-- modal -->
                               <!-- Button trigger modal -->
                               <button class="seeMore" id="open-modal3">See more photos</button>
 
@@ -270,12 +291,10 @@
                               <div class="modal-content">
                               <button  class="close" onclick="closeModals()">&times;</button>
 
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
+                                 <img src="images/familyroom1.jpg" alt="Your image description here" />
+                                 <img src="images/familyroom2.jpg" alt="Your image description here" />
+                                 <img src="images/familyroom3.jpg" alt="Your image description here" />
+                            
                                  
                               </div>
                               </div>
@@ -288,15 +307,16 @@
             </div>
          </div>
       </div>
-      
+
+
+
       <!-- start function hall-->
-      <div  class="blog">
+       <div  class="blog">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
                      <h2>Function Hall</h2>
-                     <p>Lorem Ipsum available, but the majority have suffered </p>
                   </div>
                </div>
             </div>
@@ -313,15 +333,15 @@
                            </ol>
                            <div class="carousel-inner">
                               <div class="carousel-item active">
-                                 <img class="first-slide" src="images/singleroom1.jpg" alt="First slide">
+                                 <img class="first-slide" src="../hotel_gallery/function1.png" alt="First slide">
                                  <div class="container">
                                  </div>
                               </div>
                               <div class="carousel-item">
-                                 <img class="second-slide" src="images/singleroom2.jpg" alt="Second slide">
+                                 <img class="second-slide" src="../hotel_gallery/function2.png" alt="Second slide">
                               </div>
                               <div class="carousel-item">
-                                 <img class="third-slide" src="images/singleroom1.jpg" alt="Third slide">
+                                 <img class="third-slide" src="../hotel_gallery/function3.png" alt="Third slide">
                               </div>
                            </div>
                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -336,21 +356,24 @@
                            <!-- end of photos transition -->
                      </div>
                      <div class="blog_room" id="text">
-                        <h3>Single Bedroom</h3>
-                        <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generatorsIf you are   </p>
-                         <!-- modal -->
+                        <h3>Function Hall</h3>
+                        <span>Can cater upto 100-150 person</span>
+                        <ul class="bullet-form">
+                           <li>Fully Air-conditioned</li>
+                           <li>60" smart TV</li>
+                           <li>Projector</li>
+                           <li>Table and chairs with complete linens</li>
+                         </ul><!-- modal -->
                               <!-- Button trigger modal -->
                               <button class="seeMore" id="open-modal4">See more photos</button>
 
                               <div id="modal4" class="modal">
                               <div class="modal-content">
                                  <button class="close" onclick="closeModals()">&times;</button>
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
+                                 <img src="hotel_gallery/function1.png" alt="Your image description here" />
+                                 <img src="hotel_gallery/function2.png" alt="Your image description here" />
+                                 <img src="hotel_gallery/function3.png" alt="Your image description here" />
+                                
                                  
                               </div>
                               </div>
@@ -369,8 +392,8 @@
 
       <!-- end function hall  -->
      
-      <!--  footer -->
-      <footer>
+    <!--  footer -->
+    <footer>
          <div class="footer">
             <div class="container">
                <div class="row" id="foot">
@@ -378,11 +401,10 @@
                      <h3>Contact US</h3>
                      <ul class="conta">
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i>Maigo, Lanao del Norte</li>
-                        <li><i class="fa fa-mobile" aria-hidden="true"></i>Contact Number</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">Businesshotel@gmail.com</a></li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i>227-4208</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">drringiahotel.03@gmail.com</a></li>
                      </ul>
                   </div>
-                 
                   <div class="col-md-5" >
                      
                      <ul class="social_icon">
@@ -390,11 +412,8 @@
                         <li> <a href="https://twitter.com/Dr_Ringia_Hotel" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                      </ul>
                   </div>
-               </div>
-            </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
+                   <div class="row">
+                     
                      <div class="col-md-10 offset-md-1">
                         
                         <p>
@@ -402,7 +421,12 @@
                        
 
                      </div>
-                  </div>
+                     </div>
+                 
+                
+               </div>
+            </div>
+            
                </div>
             </div>
          </div>

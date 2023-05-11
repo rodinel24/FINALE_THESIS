@@ -24,6 +24,11 @@ class Helper
     {
         return Carbon::parse(Carbon::now())->format('Y');
     }
+    public static function getCurrentTime()
+    {
+        return Carbon::now()->toTimeString();
+    }
+
 
     public static function dateDayFormat($date)
     {

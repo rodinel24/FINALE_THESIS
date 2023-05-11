@@ -3,7 +3,7 @@
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<span><a href="#" style="font-size: 1.2em;">Reports/<span><a href="#" style="font-size: 1.2em;">Payment Report </a></span> </a></span>
 
     <div class="card shadow-sm border">
 
@@ -34,11 +34,11 @@
                             <td>{{ $payment->status }}</td>
                             <td>{{ Helper::dateFormatTime($payment->created_at) }}</td>
                             <td>{{ $payment->user->name }}</td>
-                            <td> <a href="{{ route('payment.invoice', $payment->id) }}">Invoice</a> </td>
+                            <td> <a href="{{ route('payment.invoice', $payment->id) }}">E-Receipt</a> </td>
                         </tr>
                     @empty
                         <tr class="text-center">
-                            <td colspan="6">Theres no payment found on database</td>
+                            <td colspan="10">Theres no payment found on database</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -56,6 +56,7 @@ $('#exportBtn').on('click', function() {
 
 </script>
             </table>
+            {{ $payments->onEachSide(2)->links('template.paginationlinks') }}
         </div>
     </div>
 

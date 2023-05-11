@@ -32,11 +32,30 @@ class Room extends Model
         return $this->hasMany(Image::class);
     }
 
-    public function firstImage()
+    
+    public function getSingleRoomImage()
     {
-        if (count($this->image) > 0) {
-            return $this->image->first()->getRoomImage();
+        if ($this->single_room_image) {
+            return asset('images/' . $this->single_room_image);
         }
-        return asset('img/default/default-room.png');
+        return asset('images/pixel_single.png');
+
     }
+
+
+    public function firstImage()
+{
+    if (count($this->image) > 0) {
+        $image = $this->image->first();
+        if ($this->capacity <= 2) {
+            return $image->getSingleRoomImage();
+        } else if ($this->capacity <= 4) {
+            return $image->getDoubleRoomImage();
+        } else {
+            return $image->getSuiteRoomImage();
+        }
+    }
+    return asset('images/pixel_single.png');
+}
+
 }

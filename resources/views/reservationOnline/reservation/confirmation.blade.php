@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="{{ asset('style/css/progress-indication.css') }}">
 @endsection
 @section('content')
-    @include('transaction.reservation.progressbar')
+@include('reservationOnline.reservation.progressbar')
+
     <div class="container mt-3">
         <div class="row justify-content-md-center">
             <div class="col-md-8 mt-2">
@@ -159,6 +160,21 @@
                             </tr>
                         </table>
                     </div>
+                    <script>
+
+                    $(document).ready(function() {
+    $('#downPayment').on('input', function() {
+        var total_price = parseFloat($('#total_price').val());
+        var down_payment = parseFloat($(this).val());
+
+        if (down_payment > total_price) {
+            $(this).val(total_price.toFixed(2));
+        }
+    });
+});
+</script>
+
+
                 </div>
             </div>
         </div>

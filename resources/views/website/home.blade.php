@@ -21,6 +21,8 @@
 
       <!-- style css -->
       <link rel="stylesheet" href="css/style.css">
+      
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
@@ -63,41 +65,41 @@
                      </div>
                   </div>
                   <div class="col-xl-7 col-lg-9 col-md-9 col-sm-9">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+
+                     <nav class="navigation navbar navbar-expand-md navbar-dark " >
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarsExample04">
-                           <ul class="navbar-nav mr-auto" id="anchor">
+                           <ul class="navbar-nav mr-auto"  id="nav" >
                               <li class="nav-item active" >
-                                <a href="{{ url('/') }}"> <button type="button" class="btn btn-primary" id="nav"> <strong>HOME</strong> </button></a>
+                                <a href="{{ url('/') }}"> <button type="button" class="btn " id="click"> <strong>HOME</strong> </button></a>
                               </li>
                               <li class="nav-item">
-                                 <a href="{{ route('about') }}"> <button type="button" class="btn btn-primary" id="nav"> <strong>ABOUT US</strong> </button></a>
+                                 <a href="{{ route('about') }}"> <button type="button" class="btn " id="click"> <strong>ABOUT US</strong> </button></a>
                               
                               </li>
                               <li class="nav-item">
-                                 <a href="{{ route('ourRoom') }}"> <button type="button" class="btn btn-primary" id="nav"> <strong>FACILITIES</strong> </button></a>
+                                 <a href="{{ route('ourRoom') }}"> <button type="button" class="btn "id="click" > <strong>FACILITIES</strong> </button></a>
                               
 
                               </li>
                               <li class="nav-item">
-                                 <a href="{{ url('/') }}"> <button type="button" class="btn btn-primary" id="nav"> <strong>GALLERY</strong> </button></a>
+                                 <a href="{{ route('gallery') }}"> <button type="button" class="btn " id="click"> <strong>GALLERY</strong> </button></a>
                               
                               </li>
                              
                               <li class="nav-item ">
-                                 <a href="{{ url('/login') }}"> <button type="button" class="btn btn-primary" id="nav"> <strong>PMS</strong> </button></a>
+                                 <a href="{{ url('/login') }}"> <button type="button" class="btn " id="click"> <strong>PMS</strong> </button></a>
                               
                               </li>
                               <li class="nav-item">
-                                 <a href="{{ route('contact') }}"> <button type="button" class="btn btn-primary" id="nav"> <strong>CONTACT US</strong> </button></a>
+                                 <a href="{{ route('contact') }}"> <button type="button" class="btn " id="click"> <strong>CONTACT US</strong> </button></a>
                               
                               </li>
                            </ul>
                         </div>
-                           
-                     
+
                   </div>
                      </nav>
                     
@@ -197,7 +199,6 @@
                            <li>Closet with mirror</li>
                            <li>Complete bathroom amenities</li>
                            <li>Free Wifi</li>
-                           <li>Free Wifi</li>
                          </ul>
  <!-- modal -->
                               <!-- Button trigger modal -->
@@ -206,12 +207,11 @@
                               <div id="modal1" class="modal">
                               <div class="modal-content">
                                  <button class="close" onclick="closeModals()">&times;</button>
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
+                                 <img src="../images/pixel_single.png" alt="Your image description here" />
+                                 <img src="../images/single_booking.png" alt="Your image description here" />
+                                 <img src="../images/singleroom1.jpg" alt="Your image description here" />
+                                 <img src="../images/singleroom2.jpg" alt="Your image description here" />
+                               
                                  
                               </div>
                               </div>
@@ -262,7 +262,6 @@
                            <li>Closet with mirror</li>
                            <li>Complete bathroom amenities</li>
                            <li>Free Wifi</li>
-                           <li>Free Wifi</li>
                          </ul>
                          <!-- modal -->
                               <!-- Button trigger modal -->
@@ -272,12 +271,10 @@
                               <div class="modal-content">
                               <button class="close" onclick="closeModals()">&times;</button>
 
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
+                                 <img src="images/double_booking.png" alt="Your image description here" />
+                                 <img src="images/doubleroom2.jpg" alt="Your image description here" />
+                                 <img src="images/doubleroom3.jpg" alt="Your image description here" />
+                               
                                  
                               </div>
                               </div>
@@ -328,7 +325,6 @@
                            <li>Closet with mirror</li>
                            <li>Complete bathroom amenities</li>
                            <li>Free Wifi</li>
-                           <li>Free Wifi</li>
                          </ul>    <!-- modal -->
                               <!-- Button trigger modal -->
                               <button class="seeMore" id="open-modal3">See more photos</button>
@@ -337,12 +333,10 @@
                               <div class="modal-content">
                               <button  class="close" onclick="closeModals()">&times;</button>
 
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
+                                 <img src="images/familyroom1.jpg" alt="Your image description here" />
+                                 <img src="images/familyroom2.jpg" alt="Your image description here" />
+                                 <img src="images/familyroom3.jpg" alt="Your image description here" />
+                            
                                  
                               </div>
                               </div>
@@ -365,7 +359,6 @@
                <div class="col-md-12">
                   <div class="titlepage">
                      <h2>Function Hall</h2>
-                     <p>Lorem Ipsum available, but the majority have suffered </p>
                   </div>
                </div>
             </div>
@@ -382,15 +375,15 @@
                            </ol>
                            <div class="carousel-inner">
                               <div class="carousel-item active">
-                                 <img class="first-slide" src="images/singleroom1.jpg" alt="First slide">
+                                 <img class="first-slide" src="../hotel_gallery/function1.png" alt="First slide">
                                  <div class="container">
                                  </div>
                               </div>
                               <div class="carousel-item">
-                                 <img class="second-slide" src="images/singleroom2.jpg" alt="Second slide">
+                                 <img class="second-slide" src="../hotel_gallery/function2.png" alt="Second slide">
                               </div>
                               <div class="carousel-item">
-                                 <img class="third-slide" src="images/singleroom1.jpg" alt="Third slide">
+                                 <img class="third-slide" src="../hotel_gallery/function3.png" alt="Third slide">
                               </div>
                            </div>
                            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -409,7 +402,6 @@
                         <span>Can cater upto 100-150 person</span>
                         <ul class="bullet-form">
                            <li>Fully Air-conditioned</li>
-                           <li>Fully Air-conditioned</li>
                            <li>60" smart TV</li>
                            <li>Projector</li>
                            <li>Table and chairs with complete linens</li>
@@ -420,12 +412,10 @@
                               <div id="modal4" class="modal">
                               <div class="modal-content">
                                  <button class="close" onclick="closeModals()">&times;</button>
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
-                                 <img src="images/hotelmsat.jpg" alt="Your image description here" />
+                                 <img src="hotel_gallery/function1.png" alt="Your image description here" />
+                                 <img src="hotel_gallery/function2.png" alt="Your image description here" />
+                                 <img src="hotel_gallery/function3.png" alt="Your image description here" />
+                                
                                  
                               </div>
                               </div>
@@ -506,8 +496,9 @@
                      <h3>Contact US</h3>
                      <ul class="conta">
                         <li><i class="fa fa-map-marker" aria-hidden="true"></i>Maigo, Lanao del Norte</li>
-                        <li><i class="fa fa-mobile" aria-hidden="true"></i>Contact Number</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#">Businesshotel@gmail.com</a></li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i>227-4208</li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#" id="email-link" onclick="goToEmail">drringiahotel.03@gmail.com</a></li>
+
                      </ul>
                   </div>
                   <div class="col-md-5" >
@@ -538,6 +529,24 @@
       </footer>
       <!-- end footer -->
       <!-- Javascript files-->
+      <script>
+       function goToEmail() {
+      var sender = 'My Name'; // replace with the sender's name
+      var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=drringiahotel.03@gmail.com&su=Subject&body=';
+      url += encodeURIComponent('Sent from ' + sender + '\n\n'); // add the sender's name to the email body
+      window.open(url, '_blank'); // open the email link in a new tab/window
+      }
+
+      $(document).ready(function() {
+      $('#email-link').click(function(e) {
+         e.preventDefault(); // prevent the default behavior of the link
+         goToEmail(); // call the goToEmail function
+      });
+      });
+
+
+
+      </script>
       <script src="script.js"></script>
 
       <script src="js/jquery.min.js"></script>

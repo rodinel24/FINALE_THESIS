@@ -3,6 +3,8 @@
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<span><a href="#" style="font-size: 1.2em;">Accounts/<span><a href="#" style="font-size: 1.2em;">User </a></span> </a></span>
+
     <div class="row">
         <div class="col-lg-6">
             <div class="row mt-2 mb-2">
@@ -104,7 +106,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <h3>User</h3>
+                            <h3>Admin</h3>
                         </div>
                     </div>
                 </div>
@@ -187,9 +189,10 @@
                                                             </svg>
                                                         </a>
                                                     </form>
-                                                    <a class="btn btn-light btn-sm rounded shadow-sm border p-0 m-0 disabled"
-                                                        href="/user/detail/{{ $user->id }}" data-bs-toggle="tooltip"
-                                                        data-bs-placement="top" title="Detail User">
+                                                    <a class="btn btn-light btn-sm rounded shadow-sm border p-0 m-0 "
+                                                    href="{{ route('user.show', ['user' => $user->id]) }}"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Detail User">
+                                                       
                                                         <svg width="25" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
