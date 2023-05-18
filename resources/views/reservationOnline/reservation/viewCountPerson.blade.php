@@ -64,7 +64,7 @@ header{
                     <h2 class="card-title mb-4 text-center">Make a Reservation</h2>
                     <form class="row g-3" method="GET" action="{{ route('reservationOnline.reservation.chooseRoom', ['customer' => $customer->id]) }}">
                         <div class="col-md-12">
-                            <label for="count_person" class="form-label">How many people?</label>
+                            <label for="count_person" class="form-label">Total Number of Guests</label>
                             <input type="number" placeholder="Maximum value: 150"max="150" class="form-control rounded-3 @error('count_person') is-invalid @enderror" id="count_person" name="count_person" value="{{ old('count_person') }}" placeholder="Enter number of guests">
                             @error('count_person')
                                 <div class="text-danger mt-2">{{ $message }}</div>
@@ -95,17 +95,19 @@ header{
             <div class="card shadow-sm border rounded-3">
                 <div class="card-body">
                     <div class="text-center">
+                    <div style="display: flex; justify-content: center;">
                         <img src="{{ $customer->user->getAvatar() }}" class="img-fluid rounded-circle mb-3" style="width: 100px; height: 100px;">
-                        <h4 class="card-title"> <i class="fas {{ $customer->gender == 'Male' ? 'fa-male' : 'fa-female' }}"></i> {{ $customer->name }} </h4>
-                        <p class="card-text"><i class="fas fa-user-md"></i>{{ $customer->job }}</p>
+                        </div>
+                        <h4 class="card-title"> Name: {{ $customer->name }} </h4>
+                        <p class="card-text">Job: {{ $customer->job }}</p>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-6">
-                            <p class="card-text"><i class="fas fa-birthday-cake me-2"></i>{{ $customer->birthdate }}</p>
+                            <p class="card-text">Birthdate: {{ $customer->birthdate }}</p>
                         </div>
                         <div class="col-6">
-                            <p class="card-text"><i class="fas fa-map-marker-alt me-2"></i>{{ $customer->address }}</p>
+                            <p class="card-text">Address: {{ $customer->address }}</p>
                         </div>
                     </div>
                 </div>

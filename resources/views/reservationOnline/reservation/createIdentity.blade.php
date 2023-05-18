@@ -121,9 +121,12 @@
                             <div class="col-md-12">
                                 <label for="gender" class="form-label">Gender</label>
                                 <select class="form-select @error('gender') is-invalid @enderror" id="gender" name="gender" aria-label="Default select example">
-                                    {{-- <option selected hidden>Select</option> --}}
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
+                                    <option value="Non-binary">Non-binary</option>
+                                    <option value="Transgender">Transgender</option>
+                                    <option value="Genderqueer">Genderqueer</option>
+                                    <option value="Other">Other</option>
                                 </select>
                                 @error('gender')
                                     <div class="text-danger mt-1">

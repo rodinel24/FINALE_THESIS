@@ -76,7 +76,7 @@
             <div class="col-md-8 mt-2">
                 <div class="card shadow-sm border">
                     <div class="card-body p-3">
-                        <h2>{{ $roomsCount }} Room Available for:</h2>
+                        <h2>Available Rooms: {{ $roomsCount }} </h2>
                         <p>{{ request()->input('count_person') }}
                             {{ Helper::plural('People', request()->input('count_person')) }} on
                             {{ Helper::dateFormat(request()->input('check_in')) }} to
@@ -89,7 +89,7 @@
                                     value="{{ request()->input('count_person') }}">
                                 <input type="date" hidden name="check_in" value="{{ request()->input('check_in') }}">
                                 <input type="date" hidden name="check_out" value="{{ request()->input('check_out') }}">
-                                <div class="col-lg-6">
+                                <div class="col-lg-8">
                                     <select class="form-select" id="sort_name" name="sort_name"
                                         aria-label="Default select example">
                                         <option value="Price" @if (request()->input('sort_name') == 'Price') selected @endif>Price</option>
@@ -97,14 +97,14 @@
                                         <option value="Capacity" @if (request()->input('sort_name') == 'Capacity') selected @endif>Capacity</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-4">
+                                <!-- <div class="col-lg-4">
                                     <select class="form-select" id="sort_type" name="sort_type"
                                         aria-label="Default select example">
                                         <option value="ASC" @if (request()->input('sort_type') == 'ASC') selected @endif>Ascending</option>
                                         <option value="DESC" @if (request()->input('sort_type') == 'DESC') selected @endif>Descending</option>
                                     </select>
-                                </div>
-                                <div class="col-lg-2">
+                                </div> -->
+                                <div class="col-lg-4 ml-auto ">
                                     <button type="submit" class="btn myBtn shadow-sm border w-100">Search</button>
                                 </div>
                             </div>
@@ -115,10 +115,10 @@
                                     <div
                                         class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                         <div class="col p-4 d-flex flex-column position-static">
-                                            <strong class="d-inline-block mb-2 text-secondary">{{ $room->capacity }}
+                                            <strong class="d-inline-block mb-2 text-secondary">Room Capacity: {{ $room->capacity }}
                                                 {{ Str::plural('Person', $room->capacity) }}</strong>
                                             <h3 class="mb-0">{{ $room->number }}  {{ $room->type->name }}</h3>
-                                            <div class="mb-1 text-muted">{{($room->price) }} /
+                                            <div class="mb-1 text-muted">Price: {{($room->price) }} /
                                                 Day
                                             </div>
                                             <div class="wrapper">
@@ -141,12 +141,12 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 {{ $rooms->onEachSide(1)->appends([
-        'count_person' => request()->input('count_person'),
-        'check_in' => request()->input('check_in'),
-        'check_out' => request()->input('check_out'),
-        'sort_name' => request()->input('sort_name'),
-        'sort_type' => request()->input('sort_type'),
-    ])->links('template.paginationlinks') }}
+                                    'count_person' => request()->input('count_person'),
+                                    'check_in' => request()->input('check_in'),
+                                    'check_out' => request()->input('check_out'),
+                                    'sort_name' => request()->input('sort_name'),
+                                    'sort_type' => request()->input('sort_type'),
+                                ])->links('template.paginationlinks') }}
                             </div>
                         </div>
                     </div>

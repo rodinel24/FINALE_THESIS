@@ -14,7 +14,7 @@ class ReservationRepository
             ->whereNotIn('id', $occupiedRoomId);
 
         if (!empty($request->sort_name)) {
-            $rooms = $rooms->orderBy($request->sort_name, $request->sort_type);
+            $rooms = $rooms->orderBy($request->sort_name);
         }
 
         $rooms = $rooms

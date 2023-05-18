@@ -6,19 +6,13 @@
 body {
     /* background: #0099ff; */
     /* background: linear-gradient(to right, rgba(80, 0, 202, 1), rgba(80, 0, 202, 1)); */
-    background-image: url('/img/login/hotelmsat.jpg');
+    background-image: url('/hotel_gallery/hotel.png');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: 100%;
 }
 
-.bgblue {
-    /* background: linear-gradient(to right, #0099ff, #0099ff); */
-    background-image: url("img/login/hotelmsat.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
+/*  */
 
 .vertical-center {
     min-height: 100%;
@@ -55,6 +49,7 @@ body {
     bottom: 0;
 }
 
+
 .card-signin .card-title {
     margin-bottom: 2rem;
     font-weight: 300;
@@ -63,6 +58,7 @@ body {
 
 .card-signin .card-body {
     padding: 2rem;
+
 }
 
 .form-signin .btn {
