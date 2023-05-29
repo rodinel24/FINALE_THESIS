@@ -17,8 +17,8 @@ class CreateCustomersTable extends Migration
             $table->id();
             $table->string('name')->nullable(false);
             $table->string('address')->nullable();
-            $table->enum('gender',['Male', 'Female'])->nullable();
-            $table->string('job')->nullable();
+            $table->enum('gender',['Male', 'Female', 'Non-binary','Transgender','Genderqueer','Other'])->nullable();
+            $table->string('contact_number')->nullable();
             $table->date('birthdate')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

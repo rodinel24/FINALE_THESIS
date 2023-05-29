@@ -101,9 +101,15 @@ class TransactionRoomReservationController extends Controller
 
         event(new RefreshDashboardEvent("Someone reserved a room"));
 
-        return redirect()->route('transaction.index')->with('success', 'Room ' . $room->number . ' has been reservated by ' . $customer->name);
+        return redirect()->route('transaction.index')->with('success', 'Room ' . $room->number . ' has been reserved by ' . $customer->name);
     }
 
+    public function destroy(Transaction $transaction)
+{
+    $transaction->delete();
+
+    return response()->json(['message' => 'Transaction canceled successfully']);
+}
     private function getOccupiedRoomID($stayFrom, $stayUntil)
     {
         $occupiedRoomId = Transaction::where([['check_in', '<=', $stayFrom], ['check_out', '>=', $stayUntil]])

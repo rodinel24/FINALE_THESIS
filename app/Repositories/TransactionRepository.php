@@ -17,8 +17,10 @@ class TransactionRepository
             'room_id' => $room->id,
             'check_in' => $request->check_in,
             'check_out' => $request->check_out,
-            'status' => 'Reservation'
+            'status' => 'Reservation',
+          
         ]);
+        
 
         return $transaction;
     }

@@ -40,17 +40,10 @@
                                     <select class="form-select" id="sort_name" name="sort_name"
                                         aria-label="Default select example">
                                         <option value="Price" @if (request()->input('sort_name') == 'Price') selected @endif>Price</option>
-                                        <option value="Number" @if (request()->input('sort_name') == 'Number') selected @endif>Number</option>
                                         <option value="Capacity" @if (request()->input('sort_name') == 'Capacity') selected @endif>Capacity</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-4">
-                                    <select class="form-select" id="sort_type" name="sort_type"
-                                        aria-label="Default select example">
-                                        <option value="ASC" @if (request()->input('sort_type') == 'ASC') selected @endif>Ascending</option>
-                                        <option value="DESC" @if (request()->input('sort_type') == 'DESC') selected @endif>Descending</option>
-                                    </select>
-                                </div>
+                               
                                 <div class="col-lg-2">
                                     <button type="submit" class="btn myBtn shadow-sm border w-100">Search</button>
                                 </div>

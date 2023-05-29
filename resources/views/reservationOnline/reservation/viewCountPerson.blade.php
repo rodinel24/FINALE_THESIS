@@ -28,7 +28,7 @@ header{
 <header class="flex items-center justify-between py-4 px-6 bg-#0F1521  mb-3" style="position:sticky;">
         <div class="flex items-center">
             <a href="{{url('/')}}">
-                <img class="h-20" src="../img/logo/logo.png" alt="Hotel Logo">
+                <img class="h-20" src="../img/msat.png" alt="Hotel Logo">
             </a>
             <h1 class="ml-4 text-2xl font-bold text-white">Dr. Magadapa Ali Ringia Hotel</h1>
             <div class="text-left" style="margin-left:0.8cm; line-height:1;">
@@ -65,9 +65,9 @@ header{
                     <form class="row g-3" method="GET" action="{{ route('reservationOnline.reservation.chooseRoom', ['customer' => $customer->id]) }}">
                         <div class="col-md-12">
                             <label for="count_person" class="form-label">Total Number of Guests</label>
-                            <input type="number" placeholder="Maximum value: 150"max="150" class="form-control rounded-3 @error('count_person') is-invalid @enderror" id="count_person" name="count_person" value="{{ old('count_person') }}" placeholder="Enter number of guests">
+                            <input type="number" placeholder="Maximum value: 150"max="150" min="1" class="form-control rounded-3 @error('count_person') is-invalid @enderror" id="count_person" name="count_person" value="{{ old('count_person') }}" placeholder="Enter number of guests">
                             @error('count_person')
-                                <div class="text-danger mt-2">{{ $message }}</div>
+                                <div class="text-danger mt-2">{{ "Please input the total number of guests" }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6">
@@ -95,23 +95,35 @@ header{
             <div class="card shadow-sm border rounded-3">
                 <div class="card-body">
                     <div class="text-center">
-                    <div style="display: flex; justify-content: center;">
+                    <div class="d-flex justify-content-center align-items-center">
                         <img src="{{ $customer->user->getAvatar() }}" class="img-fluid rounded-circle mb-3" style="width: 100px; height: 100px;">
-                        </div>
-                        <h4 class="card-title"> Name: {{ $customer->name }} </h4>
-                        <p class="card-text">Job: {{ $customer->job }}</p>
+                    </div>
+
+                        
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-6">
-                            <p class="card-text">Birthdate: {{ $customer->birthdate }}</p>
+                            <p class="card-text"><strong>Name:</strong>{{ Str::ucfirst($customer->name) }}</p>
                         </div>
                         <div class="col-6">
-                            <p class="card-text">Address: {{ $customer->address }}</p>
+                            <p class="card-text"><strong>Gender:</strong>{{ Str::ucfirst($customer->gender == 'Male' ? 'Male' : 'female') }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-text"><strong>Birthdate:</strong>{{ Str::ucfirst($customer->birthdate)  }}</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text"><strong>Address:</strong>{{ Str::ucfirst( $customer->address )}}</p>
+                        </div>
+                    </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+
             <script>
                 $(function() {
             // Set the maximum date for the check-out input field to one year from the current date

@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- Icon --}}
-    <link rel="icon" href="{{ asset('img/logo/sip.png') }}">
+    <link rel="icon" href="{{ asset('img/msat.png') }}">
     {{-- style --}}
     @vite('resources/sass/app.scss')
     <title>@yield('title')</title>

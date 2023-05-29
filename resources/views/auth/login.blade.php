@@ -38,7 +38,7 @@
                         </div>
                         <div class="row">
                         <div class="logo" style="padding: 5px; border-radius: 10px; text-align:center;">
-                        <a href="{{ url('/') }}"> <img href="{{url('/login')}}"src="img/logo/logo.png" alt="#" style="height: 9.5em; width: auto; border-radius: 10px; margin-top: -32px;"></a>
+                        <a href="{{ url('/') }}"> <img href="{{url('/login')}}"src="img/msat.png" alt="#" style="height: 9.5em; width: auto; border-radius: 10px; margin-top: -32px;"></a>
                     </div>
                         
 

@@ -12,7 +12,7 @@
 <header class="d-flex justify-content-between align-items-center">
   <div class="logo">
     <!-- Insert your company logo here -->
-    <a href="{{ url('/') }}"><img src="img/logo/logo.png" alt="#" /></a>
+    <a href="{{ url('/') }}"><img src="img/msat.png" alt="#" /></a>
 
   </div>
   <div class="details text-start">

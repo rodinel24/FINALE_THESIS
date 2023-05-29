@@ -21,6 +21,7 @@ class CreateRoomsTable extends Migration
             $table->bigInteger('capacity');
             $table->double('price');
             $table->longText('view');
+            $table->double('extra_bed');
             $table->timestamps();
         });
     }
@@ -33,5 +34,6 @@ class CreateRoomsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('rooms');
+        $table->dropColumn('extra_bed');
     }
 }

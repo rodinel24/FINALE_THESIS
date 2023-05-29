@@ -50,7 +50,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                           <a href="{{ url('/') }}"><img src="img/logo/logo.png" alt="#" /></a>
+                           <a href="{{ url('/') }}"><img src="img/msat.png" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -126,7 +126,7 @@ The Dr. Magadapa Ali Ringia Hotel was named after the late superintendent of the
                </div>
                <div class="col-md-7">
                   <div class="about_img">
-                     <figure ><img style="border-radius:20px;" src="images/hotelmsat.jpg" alt="#"/></figure>
+                     <figure ><img style="border-radius:20px;" src="img/pms.jpg" alt="#"/></figure>
                   </div>
                </div>
             </div>

@@ -23,7 +23,7 @@
 
         <div class="flex items-center">
             <a href="{{url('/')}}">
-                <img class="h-20" src="../img/logo/logo.png" alt="Hotel Logo">
+                <img class="h-20" src="../img/msat.png" alt="Hotel Logo">
             </a>
             <h1 class="ml-4 text-2xl font-bold text-white">Dr. Magadapa Ali Ringia Hotel</h1>
             <div class="text-left" style="margin-left:0.8cm; line-height:1;">
@@ -78,7 +78,7 @@
                     <div class="card-body p-3">
                         <h2>Available Rooms: {{ $roomsCount }} </h2>
                         <p>{{ request()->input('count_person') }}
-                            {{ Helper::plural('People', request()->input('count_person')) }} on
+                            {{ Helper::plural('Person(s)', request()->input('count_person')) }} on
                             {{ Helper::dateFormat(request()->input('check_in')) }} to
                             {{ Helper::dateFormat(request()->input('check_out')) }}</p>
                         <hr>
@@ -93,7 +93,6 @@
                                     <select class="form-select" id="sort_name" name="sort_name"
                                         aria-label="Default select example">
                                         <option value="Price" @if (request()->input('sort_name') == 'Price') selected @endif>Price</option>
-                                        <option value="Number" @if (request()->input('sort_name') == 'Number') selected @endif>Number</option>
                                         <option value="Capacity" @if (request()->input('sort_name') == 'Capacity') selected @endif>Capacity</option>
                                     </select>
                                 </div>
@@ -165,21 +164,22 @@
                     <hr>
                     <div class="row">
                         <div class="col-6">
-                            <p class="card-text"> <strong>Name: </strong>{{ $customer->name }}</p>
+                            <p class="card-text"><strong>Name:</strong>{{ Str::ucfirst($customer->name) }}</p>
                         </div>
                         <div class="col-6">
-                            <p class="card-text"><strong>Gender:</strong>{{ $customer->gender == 'Male' ? 'Male' : 'female' }}</p>
+                            <p class="card-text"><strong>Gender:</strong>{{ Str::ucfirst($customer->gender == 'Male' ? 'Male' : 'female') }}</p>
                         </div>
-                        
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <p class="card-text"> <strong>Birthdate: </strong>{{ $customer->birthdate }}</p>
+                            <p class="card-text"><strong>Birthdate:</strong>{{ Str::ucfirst($customer->birthdate)  }}</p>
                         </div>
                         <div class="col-6">
-                            <p class="card-text"><strong>Address:</strong>{{ $customer->address }}</p>
+                            <p class="card-text"><strong>Address:</strong>{{ Str::ucfirst( $customer->address )}}</p>
+                        </div>
+                    </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div

@@ -23,6 +23,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OnlineReservationController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReservationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,17 @@ Route::get('/ourRoom' , [HotelWebsiteController::class , 'ourRoom'])->name('ourR
 //contact us routes
 Route::post('/contact' , [ContactController::class , 'store'])->name('contact.store');
 
+//reservation online routes
+
+Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations.index');
+Route::patch('/reservations/{reservation}/confirm', [ReservationController::class, 'confirm'])->name('reservations.confirm');
+Route::patch('/reservations/{reservation}/reject', [ReservationController::class, 'reject'])->name('reservations.reject');
+
+//reservation online creation routes
+
+Route::get('/reservations/create', [ReservationController::class, 'create'])->name('reservations.create');
+Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
+Route::get('/reservations/confirmation', [ReservationController::class, 'confirmation'])->name('reservations.confirmation');
 
 
 
@@ -60,6 +73,11 @@ Route::name('reservationOnline.reservation.')->group(function () {
     Route::get('/{customer}/{room}/{from}/{to}/confirmationOnline', [OnlineReservationController::class, 'confirmation'])->name('confirmation');
     Route::post('/{customer}/{room}/payDownPaymentOnline', [OnlineReservationController::class, 'payDownPayment'])->name('payDownPayment');
 });
+
+Route::get('/prompt', [OnlineReservationController::class, 'prompt'])->name('prompt');
+
+Route::delete('/transactions/{transaction}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
+
 
 
 Route::group(['middleware' => ['auth', 'checkRole:Super']], function () {

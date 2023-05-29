@@ -9,7 +9,7 @@
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
       <title>Dr. Ringia Hotel Website</title>
-      <link rel="icon" href="img/logo/logo.png" type="png">
+      <link rel="icon" href="img/msat.png" type="png">
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -57,7 +57,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo" >
-                           <a href="{{ url('/') }}"><img src="img/logo/logo.png" alt="#" /></a>
+                           <a href="{{ url('/') }}"><img src="img/msat.png" alt="#" /></a>
 
                            </div>
                           
@@ -117,7 +117,7 @@
       <!-- banner -->
       <div class = "video">
             <video autoplay loop muted poster>
-            <source src="videos/hotelmontage.mp4" type="video/mp4">
+            <source src="videos/video.mp4" type="video/mp4">
             </video>
       </div>
       
@@ -127,7 +127,7 @@
     <div class="row">
       <div class="col-md-5">
       <div class="book_room" style="display: inline-block;">
-        <h1>Online Reservation</h1>
+        <h1>Reservation</h1>
           <form class="book_now">
             <div class="text-center col-md-12">
               <a class="btn text-center btn-danger bookNow" href="{{ url('/createIdentityOnline') }}">Book Now</a>

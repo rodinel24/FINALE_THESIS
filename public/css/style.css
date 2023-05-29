@@ -201,6 +201,7 @@ img {
      padding: 0;
 }
 
+
 .form-control:focus {
      border-color: #ffffff !important;
      box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);

@@ -21,8 +21,11 @@ class CreateTransactionsTable extends Migration
             $table->date('check_in');
             $table->date('check_out');
             $table->string('status');
+            $table->boolean('confirmed')->default(false);
+           
             $table->timestamps();
         });
+        
     }
 
     /**

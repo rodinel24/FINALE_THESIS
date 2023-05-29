@@ -25,8 +25,8 @@ class CustomerFactory extends Factory
         return [
             'name' => $this->faker->name,
             'address' => $this->faker->address,
-            'gender' => $this->faker->randomElement(['Male', 'Female']),
-            'job' => $this->faker->jobTitle,
+            'gender' => $this->faker->randomElement(['Male', 'Female','Non-binary','Transgender','Genderqueer','Other']),
+            'contact_number' => $this->faker->contact_number,
             'birthdate' => $this->faker->date(),
             'user_id' => User::factory()->isCustomer()
         ];

@@ -4,14 +4,14 @@
     <link rel="stylesheet" href="{{ asset('style/css/progress-indication.css') }}">
 @endsection
 @section('content')
-    @include('transaction.reservation.progressbar')
+    @include('transaction.reservation.progressbar')               
     <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8 col-sm-10">
             <div class="card shadow-sm border rounded-3">
                 <div class="card-body p-4">
                     <h2 class="card-title mb-4 text-center">Make a Reservation</h2>
-                    <form class="row g-3" method="GET" action="{{ route('reservationOnline.reservation.chooseRoom', ['customer' => $customer->id]) }}">
+                    <form class="row g-3" method="GET" action="{{ route('transaction.reservation.chooseRoom', ['customer' => $customer->id]) }}">
                         <div class="col-md-12">
                             <label for="count_person" class="form-label">How many people?</label>
                             <input type="number" class="form-control rounded-3 @error('count_person') is-invalid @enderror" id="count_person" name="count_person" value="{{ old('count_person') }}" placeholder="Enter number of guests">
@@ -40,25 +40,37 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 mt-4">
+             <div class="col-lg-4 col-md-6 mt-4">
             <div class="card shadow-sm border rounded-3">
                 <div class="card-body">
                     <div class="text-center">
+                    <div class="d-flex justify-content-center align-items-center">
                         <img src="{{ $customer->user->getAvatar() }}" class="img-fluid rounded-circle mb-3" style="width: 100px; height: 100px;">
-                        <h4 class="card-title"> <i class="fas {{ $customer->gender == 'Male' ? 'fa-male' : 'fa-female' }}"></i> {{ $customer->name }} </h4>
-                        <p class="card-text"><i class="fas fa-user-md"></i>{{ $customer->job }}</p>
+                    </div>
+
+                        
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-6">
-                            <p class="card-text"><i class="fas fa-birthday-cake me-2"></i>{{ $customer->birthdate }}</p>
+                            <p class="card-text"><strong>Name:</strong>{{ Str::ucfirst($customer->name) }}</p>
                         </div>
                         <div class="col-6">
-                            <p class="card-text"><i class="fas fa-map-marker-alt me-2"></i>{{ $customer->address }}</p>
+                            <p class="card-text"><strong>Gender:</strong>{{ Str::ucfirst($customer->gender == 'Male' ? 'Male' : 'female') }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="card-text"><strong>Birthdate:</strong>{{ Str::ucfirst($customer->birthdate)  }}</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text"><strong>Address:</strong>{{ Str::ucfirst( $customer->address )}}</p>
+                        </div>
+                    </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div
 
 @endsection

@@ -5,7 +5,7 @@
             <i class="fa fa-bars"></i>
         </div>
         <div style="width: 60px; margin-left: 30px;">
-            <img src="img/logo/logo.png" alt="" style="width: 100%; height: auto;">
+            <img src="img/msat.png" alt="" style="width: 100%; height: auto;">
             
         </div>
         <div class="details text-start">
@@ -23,13 +23,13 @@
                 <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="btn position-relative bg-icon">
                         <i class="fas fa-bell">
-                            <!-- @if (auth()->user()->unreadNotifications->count() > 0) -->
+                            @if (auth()->user()->unreadNotifications->count() > 0)
                                 <span
                                     class="position-absolute mt-1 top-0 start-100 translate-middle badge rounded-pill bg-secondary">
                                     {{ auth()->user()->unreadNotifications->count() }}
                                     <span class="visually-hidden">unread messages</span>
                                 </span>
-                            <!-- @endif -->
+                            @endif
                            
                         </i>
                     </div>

@@ -50,7 +50,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo" >
-                           <a href="{{ url('/') }}"><img src="img/logo/logo.png" alt="#" /></a>
+                           <a href="{{ url('/') }}"><img src="img/msat.png" alt="#" /></a>
                            </div>
                         </div>
                      </div>

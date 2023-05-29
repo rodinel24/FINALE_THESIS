@@ -68,8 +68,22 @@ class OnlineReservationController extends Controller
         $price = $room->price;
         $dayDifference = Helper::getDateDifference($stayFrom, $stayUntil);
         $downPayment = ($price * $dayDifference) * 0.50;
-        return view('reservationOnline.reservation.confirmation', compact('customer', 'room', 'stayFrom', 'stayUntil', 'downPayment', 'dayDifference'));
+        return view('reservationOnline.reservation.confirm', compact('customer', 'room', 'stayFrom', 'stayUntil', 'downPayment', 'dayDifference'));
     }
+
+    public function confirmReservation(Request $request)
+    {
+        // Perform any necessary validation or processing of the reservation data here
+
+        // Send confirmation email to the provided email address
+        $email = $request->input('email');
+        // Code to send the confirmation email goes here
+
+        // Return a response to the user
+        return view('confirmation')->with('email', $email);
+    }
+
+  
 
     public function payDownPayment(Customer $customer, Room $room, Request $request, TransactionRepository $transactionRepository, PaymentRepository $paymentRepository)
     {
@@ -101,7 +115,11 @@ class OnlineReservationController extends Controller
 
         event(new RefreshDashboardEvent("Someone reserved a room"));
 
-        return redirect()->route('transaction.reservation.index')->with('success', 'Room ' . $room->number . ' has reserved by ' . $customer->name);
+        return view('reservationOnline.reservation.prompt')->with('success', 'Room ' . $room->number . ' has reserved by ' . $customer->name);
+    }
+    public function prompt()
+    {
+        return view('reservationOnline.reservation.prompt');
     }
 
     private function getOccupiedRoomID($stayFrom, $stayUntil)

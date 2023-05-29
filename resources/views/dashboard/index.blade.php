@@ -76,11 +76,11 @@
                                     <!-- <button id="exportBtn">Export to Excel</button> -->
                                         <tr>
                                             <th></th>
-                                            <th>Name</th>
-                                            <th>Room</th>
-                                            <th class="text-center">Stay</th>
-                                            <th>Day Left</th>
-                                            <th>Debt</th>
+                                            <th>Guest Name</th>
+                                            <th>Room Number</th>
+                                            <th class="text-center">Check-in/Check-out</th>
+                                            <th>Day(s) Left</th>
+                                            <th>Balance</th>
                                             <th class="text-center">Status</th>
                                         </tr>
                                     </thead>
@@ -163,8 +163,7 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <p class="d-flex flex-column">
-                                        {{-- <span class="text-bold text-lg">Belum</span> --}}
-                                        {{-- <span>Total Guests at {{ Helper::thisMonth() . '/' . Helper::thisYear() }}</span> --}}
+                                       
                                     </p>
                                     {{-- <p class="ml-auto d-flex flex-column text-right">
                                     <span class="text-success">
