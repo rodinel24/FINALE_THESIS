@@ -117,43 +117,7 @@
 
 </div></div>
 </div>
-                    <!-- Another data table -->
-                    <div class="row my-2 mt-4 ms-1">
-    <div class="col-lg-12">
-        <h5>Transferred Reservations: </h5>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-sm table-hover" id="transferredTable">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>ID</th>
-                                <th>Guest Name</th>
-                                <th>Email</th>
-                                <th>Room Number</th>
-                                <th>Room Type</th>
-                                <th>Check In</th>
-                                <th>Check Out</th>
-                                <th>Days</th>
-                                <th>Total Price</th>
-                                <th>Paid</th>
-                                <th>Balance</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Populate the transferred reservations here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                   
 
  <div class="row my-2 mt-4 ms-1" >
         <div class="col-lg-12">
